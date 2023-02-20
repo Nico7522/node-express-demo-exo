@@ -1,0 +1,27 @@
+<%- include('../shared/header') %>
+
+<h1>LISTE DES CONTACTS</h1>
+
+<% for(const cont of contacts) { %>
+
+  <div class="card">
+    <h2 class="nom">Nom : <%= cont.name %></h2>
+    <p>Prénom : <%= cont.surname %></p>
+    <p>Email : <%= cont.email %></p>
+    <p>Numéro de téléphone : <%= cont.tel %></p>
+    <% if (cont.favori) { %>
+    <p class="fav">FAV*</p>
+    <% } %>
+    <a href="/contacts/supprimer">Supprimer</a>
+  </div>
+
+  <% } %>
+  
+  <div class="addcontact">
+    <a class="add" href="/contacts/ajouter">Ajouter un contact</a>
+  </div>
+
+<!-- <script type="module" src="../../models/contact.model.js"></script> -->
+<!-- <script src="/build/query-selector-standalone-debug.js"></script> -->
+
+<%- include('../shared/footer') %>

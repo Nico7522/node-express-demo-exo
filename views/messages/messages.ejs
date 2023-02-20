@@ -1,0 +1,19 @@
+<%- include('../shared/header') %>
+
+<main>
+  <h1>Voici la liste des messsages : 📑</h1>
+  <% for(const message of messages) { %>
+
+  <div class="card">
+    <h2 class="<%= message.urgent ? 'urgent' : '' %>"><%= message.title %></h2>
+    <p><%= message.msg %></p>
+    <p><%= message.author %></p>
+  
+  </div>
+  <% } %>
+  <a href="/messages/ajouter">Ajouter un message</a>
+</main>
+
+
+<%- include('../shared/footer') %>
+
